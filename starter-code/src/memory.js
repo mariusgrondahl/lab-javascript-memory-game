@@ -1,15 +1,13 @@
 class MemoryGame {
-  constructor(card){
+  constructor(cards){
     this.cards = cards;
     this.pickedCards = [];
     this.pairsClicked = 0;
     this.pairsGuessed = 0;
   }
+};
 
-
-}
-
-MemoryGame.prototype.shuffleCards = function() {
+MemoryGame.prototype.shuffleCards = function(arr) {
   let currentIndex = arr.length;
   let randomIndex = 0;
   let currentValue = 0;
@@ -26,7 +24,12 @@ MemoryGame.prototype.shuffleCards = function() {
 };
 
 MemoryGame.prototype.checkIfPair = function(firstCard, secondCard) {
-
+  if (firstCard === secondCard){
+    this.pairsClicked++;
+    this.pairsGuessed++;
+  } else {
+    this.pairsClicked;
+  }
 };
 
 
@@ -34,5 +37,3 @@ MemoryGame.prototype.isFinished = function(firstCard, secondCard) {
 
 };
 
-
-// let newGame = new MemoryGame {};

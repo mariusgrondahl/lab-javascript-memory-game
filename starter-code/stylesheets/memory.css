@@ -5,7 +5,7 @@ html {
 }
 
 #memory_board {
-  background:#dddddd;
+  background:#fafafa;
 	width:800px;
 	height:540px;
 	padding:70px;
@@ -14,16 +14,42 @@ html {
   box-shadow: inset 0px 0px 20px -6px rgba(97,89,97,1);
 }
 
+.card{
+}
 
-.card .back {
+
+.back{
+  position: relative;
+  display: block;
   background-color: #456783;
 	width:71px;
-	height:71px;
+  height:71px;
 	float:left;
 	margin:10px;
 	padding:20px;
 	font-size:64px;
+
 }
+
+.front{
+  position: relative;
+  display: block;
+	width:71px;
+  height:71px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:64px;
+
+}
+
+.back.front {
+  background-color: none;
+  opacity: 0.8;
+
+
+}
+
 .card .front.blocked,
 .card .back.blocked {
   pointer-events: none;

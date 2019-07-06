@@ -24,28 +24,36 @@ var cards = [
   { name: 'the avengers',    img: 'the-avengers.jpg' },
   { name: 'thor',            img: 'thor.jpg' }
 ];
+
 var memoryGame = new MemoryGame(cards);
 
 
+
 document.addEventListener("DOMContentLoaded", function(event) { 
-  var html = '';
-  memoryGame.cards.forEach(function (pic) {
-    html += '<div class="card" data-card-name="'+ pic.name +'">';
-    html += '  <div class="back" name="'+ pic.img +'"></div>';
-    html += '  <div class="front" style="background: url(img/'+ pic.img +') no-repeat"></div>';
-    html += '</div>';
-  });
+ 
+  $(document).ready(function(){
+    // Lets create alle the cards
+    let html = '';
 
+    $("#memory_board").html(html) 
+    memoryGame.cards.forEach(function (pic) {
+      html += '<div class="card" data-card-name="'+ pic.name +'">';
+   // html += '  <div class="back" name="'+ pic.img +'"></div>';
+      html += '  <div class="front" style="background: url(img/'+ pic.img +') no-repeat"></div>';
+      html += '</div>';
+    });
   // Add all the div's to the HTML
-  document.querySelector('#memory_board').innerHTML = html;
-
+  $("#memory_board").html(html) 
+  
   // Bind the click event of each element to a function
-  document.querySelectorAll('.back').forEach(function(card) {
-    card.onclick = function() {
-      // TODO: write some code here
-      console.log('Card clicked')
-    }
-  });
-});
+      $(".front").click(function() {
+        console.log("Her klikkær vi")
+        $(this).toggleClass("front");
 
+       
+      });
+
+}); // Here ends the Dom content loaded function
+
+}); // document ready function
 
